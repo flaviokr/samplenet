@@ -1,4 +1,4 @@
 require 'neo4j'
-require 'neo4j/session_manager'
+require 'neo4j/core/cypher_session/adaptors/http'
 
-Neo4j::ActiveBase.current_session = Neo4j::SessionManager.open_neo4j_session(:http, "http://neo4j:#{ENV['PASSWORD']}@localhost:7474")
+Neo4j::ActiveBase.current_adaptor = Neo4j::Core::CypherSession::Adaptors::HTTP.new("http://neo4j:#{ENV['PASSWORD']}@localhost:7474", wrap_level: :proc)
