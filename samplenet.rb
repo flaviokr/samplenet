@@ -1,4 +1,4 @@
 require './setup'
 require './models'
+require './importers'
 
-# Artist.create(name: 'Kanye West')
