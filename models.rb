@@ -14,7 +14,7 @@ end
 class Track
   include Neo4j::ActiveNode
   id_property :title
-  property :release_date
+  property :release_year
 
   has_many :out, :albums, type: :BELONGS_TO, unique: true
   has_many :out, :samples, type: :SAMPLES, model_class: :Track, unique: true

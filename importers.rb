@@ -26,7 +26,7 @@ module Importers
 
       def self.scrape_page(page)
         track = Track.find_or_create_by(title: page.search('div.trackInfo h1[itemprop=name]').text,
-                                        release_date: page.search('div.trackInfo span[itemprop=datePublished]').text)
+                                        release_year: page.search('div.trackInfo span[itemprop=datePublished]').text)
 
         artist = Artist.find_or_create_by(name: page.search('div.trackArtists h2 a').text)
 
